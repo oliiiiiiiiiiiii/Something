@@ -37,7 +37,7 @@ export default {
         id: 3,
         text: "To get most active role",
         day: "someday3",
-        reminder: true,
+        reminder: false,
       },
     ];
   },

@@ -12,7 +12,8 @@ export default {
     color: String,
   },
   methods: {
-    addtext() {},
+    addtext() {
+    },
   },
 };
 </script>
