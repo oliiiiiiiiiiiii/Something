@@ -1,7 +1,7 @@
 <template>
   <div class="container">
     <Header title="Some Text Below" />
-    <Tasks :tasks="tasks" />
+    <Tasks @delete-task="deleteTask" :tasks="tasks" />
   </div>
 </template>
 
@@ -18,6 +18,13 @@ export default {
     return {
       tasks: [],
     };
+  },
+  methods:{
+    deleteTask(id){
+      if (confirm("Are you sure ?")){
+        this.tasks = this.tasks.filter((task) =>  task.id !== id)
+    }
+    }
   },
   created() {
     this.tasks = [
@@ -53,17 +60,17 @@ export default {
 }
 body {
   font-family: "Poppins", sans-serif;
-  background-color: rgb(22, 122, 153);
+  background-color: rgb(255, 255, 255);
 }
 .container {
   max-width: 500px;
   margin: 30px auto;
   overflow: auto;
   min-height: 300px;
-  border: 2px solid rgb(40, 180, 157);
+  border: 2px solid rgb(0, 0, 0);
   padding: 30px;
   border-radius: 50px;
-  background: rgb(0, 0, 0);
-  color: rgb(255, 255, 255);
+  background: rgb(255, 255, 255);
+  color: rgb(0, 0, 0);
 }
 </style>
